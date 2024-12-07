@@ -7,7 +7,6 @@ const usePagination = ({fetchData, pageSize,setItems}) =>{
     useEffect(() =>{
         const loadPage = async () =>{
             const response = await fetchData(currentPage,pageSize);
-            console.log(response.content)
             setItems(response.content);
             setTotalItems(response.totalElements)
         };

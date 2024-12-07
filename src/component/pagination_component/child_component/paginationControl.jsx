@@ -1,6 +1,5 @@
 const PaginationControls = ({ currentPage, totalItems, pageSize, nextPage, prevPage, setPage }) => {
     const totalPages = Math.ceil(totalItems / pageSize);
-    console.log(totalPages)
     return (
         <div>
             <nav aria-label="Page navigation example">
@@ -11,7 +10,7 @@ const PaginationControls = ({ currentPage, totalItems, pageSize, nextPage, prevP
                     </li>
                     {Array.from({ length: totalPages }, (_, i) => (
                         <li>
-                            <a  key={i} onClick = {() => setPage(i)} className={currentPage ===i ?'active flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700':''}>{i + 1}
+                            <a  key={i} onClick = {() => setPage(i)} className={currentPage ===i ?'active flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700':'flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700'}>{i + 1}
                              </a>
                         </li>
 

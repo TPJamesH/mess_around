@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import useGridTableLoadData from "./hook/useGetGridTableData";
+import showByPage from "../pagination_component/api/showByPage";
 const GridTable = ({
     RowComponent,
     loadItemApi,
@@ -8,7 +9,9 @@ const GridTable = ({
 
 }) => {
    // const { items, fetchItems ,setItems} = useGridTableLoadData(loadItemApi)
-   const { items, fetchItems ,setItems} = useGridTableLoadData(loadItemApi)
+   const pageSize = 5
+   const loadItem = showByPage(0,pageSize)
+   const { items, fetchItems ,setItems} = useGridTableLoadData(loadItem)
     return (
         <>
 
@@ -40,7 +43,7 @@ const GridTable = ({
 
 
             </div>
-            <Pagination setItems={setItems} />
+            <Pagination setItems={setItems} pageSize={pageSize} />
         </>
     );
 };

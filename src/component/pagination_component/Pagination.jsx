@@ -1,16 +1,11 @@
 import usePagination from "./hook/usePagination"
 import PaginationControls from "./child_component/paginationControl";
 import showByPage from "./api/showByPage";
-const Pagination = ({setItems}) => {
-    const pageSize = 4
+const Pagination = ({setItems,pageSize}) => {
     const {currentPage,nextPage,prevPage,setPage, totalItems} = usePagination({
         fetchData: showByPage,
         pageSize,setItems});
-        
-    console.log({
-        currentPage: currentPage,
-        totalItems: totalItems
-    })
+    
     return (
         <PaginationControls
             currentPage={currentPage}
