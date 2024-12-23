@@ -7,7 +7,8 @@ const search = async (searchKey, setFunction) => {
         instruction = `${CustomerUrlConfig.CUSTOMER_SEARCH}/${searchKey}`
     }
     else {
-        instruction = `${CustomerUrlConfig.CUSTOMER_SERVICE_URL}`
+
+        instruction = `${CustomerUrlConfig.CUSTOMER_SERVICE_GETALL}`
     }
     let response = await sendHttpRequest(instruction)
 

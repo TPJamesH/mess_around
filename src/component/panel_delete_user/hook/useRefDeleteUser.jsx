@@ -1,14 +1,13 @@
 import { useRef } from 'react';
 import DeleteUser from "../api/deleteUser"
-
 const useRefDeleteUser = () => {
     const userFormRef = useRef(null);
 
-    const deleteUser = async (id, reloadUsersFunc) => {
+    const deleteUser = async (id, reloadUsersFunc,setItems) => {
 
         let response = await DeleteUser(id);
         if (response.status == 200) {
-            reloadUsersFunc();
+            reloadUsersFunc()
         }
         // handle error cases here
     }

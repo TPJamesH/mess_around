@@ -3,8 +3,8 @@ import useGridTableLoadData from "./hook/useGetGridTableData";
 import showByPage from "../pagination_component/api/showByPage";
 const GridTable = ({
     RowComponent,
-    loadItemApi,
-    NewItemPanel,
+    NewItemModal,
+    SearchPanel,
     Pagination
 
 }) => {
@@ -14,7 +14,10 @@ const GridTable = ({
     const { items, fetchItems, setItems } = useGridTableLoadData(loadItem)
     return (
         <>
+            < NewItemModal reloadFunction={fetchItems} />
 
+
+            <SearchPanel setFunction={setItems} />
             <div className="relative overflow-x-auto flex justify-center">
                 <table className="text-sm text-center rtl:text-right text-gray-500 ">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
@@ -35,7 +38,7 @@ const GridTable = ({
                     <tbody>
                         {items && items.length > 0 ?
                             items.map((item, index) => (
-                                <RowComponent item={item} key={index} reloadFunction={fetchItems} />
+                                <RowComponent item={item} key={index} reloadFunction={fetchItems} setItems ={setItems}/>
                             )) : (<p>No items available</p>)}
 
                     </tbody>
@@ -43,7 +46,7 @@ const GridTable = ({
 
 
             </div>
-            <Pagination setItems={setItems} pageSize={pageSize} />
+            <Pagination setItems={setItems}  pageSize={pageSize} />
         </>
     );
 };

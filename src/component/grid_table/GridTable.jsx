@@ -4,8 +4,6 @@ const GridTable = ({
     loadItemApi,
     NewItemModal,
     SearchPanel,
-    deleteUserPanel,
-    updateUserModal
 
 } ) => {
     const { items, fetchItems,setItems} = useGridTableLoadData(loadItemApi)

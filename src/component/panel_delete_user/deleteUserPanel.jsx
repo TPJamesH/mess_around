@@ -3,7 +3,7 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, Button} from '@headle
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import useRefDeleteUser from './hook/useRefDeleteUser'
 
-export default function DeleteUser({item,reloadFunction}) {
+export default function DeleteUser({item,reloadFunction,setItems}) {
   let [isOpen, setIsOpen] = useState(false)
   const {deleteUser } =  useRefDeleteUser();
   function open() {
@@ -53,7 +53,7 @@ function close() {
               <button
                 type="button"
                 onClick={() =>{
-                  deleteUser(item.id,reloadFunction)
+                  deleteUser(item.id,reloadFunction,setItems)
                   close();
                 }}
                 className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"

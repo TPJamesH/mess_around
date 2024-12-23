@@ -2,7 +2,7 @@ import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 import { useState } from 'react'
 import useRefUpdateUser from './hook/useRefUpdateUser';
 
-export default function  UpdateUserModal({ item,reloadFunction }) {
+export default function  UpdateUserModal({ item,reloadFunction,setItems}) {
     let [isOpen, setIsOpen] = useState(false)
     const { userFormRef, submitUser } =  useRefUpdateUser();
     function open() {
@@ -70,7 +70,7 @@ export default function  UpdateUserModal({ item,reloadFunction }) {
                                 <Button
                                     className="inline-flex items-center gap-2 rounded-md bg-green-700 py-1.5 px-5 text-md/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700 transform translate-y-6"
                                     onClick={(e) => {
-                                        submitUser(e, reloadFunction, item.id);
+                                        submitUser(e, reloadFunction, item.id,setItems);
                                         close();
                                     }}
                                 >

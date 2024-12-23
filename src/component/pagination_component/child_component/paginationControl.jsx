@@ -3,14 +3,14 @@ const PaginationControls = ({ currentPage, totalItems, pageSize, nextPage, prevP
     return (
         <div>
             <nav aria-label="Page navigation">
-                <ul class="inline-flex -space-x-px text-base pt-6 h-10">
+                <ul className="inline-flex -space-x-px text-base pt-6 h-10">
 
                     <li>
-                        <a  onClick={prevPage} disabled = {currentPage === 0} className="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 ">Previous</a>
+                        <a  href="#"onClick={prevPage} disabled = {currentPage === 0} className="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 ">Previous</a>
                     </li>
                     {Array.from({ length: totalPages }, (_, i) => (
                         <li>
-                            <a  key={i} onClick = {() => setPage(i)} 
+                            <a   href="#" key={i} onClick = {() => setPage(i)} 
                             className={currentPage ===i ?'active flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700':'flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700'}>
                                 {i + 1}
                              </a>
