@@ -8,10 +8,10 @@ const GridTable = ({
     Pagination
 
 }) => {
-   // const { items, fetchItems ,setItems} = useGridTableLoadData(loadItemApi)
-   const pageSize = 5
-   const loadItem = showByPage(0,pageSize)
-   const { items, fetchItems ,setItems} = useGridTableLoadData(loadItem)
+    // const { items, fetchItems ,setItems} = useGridTableLoadData(loadItemApi)
+    const pageSize = 5
+    const loadItem = showByPage(0, pageSize)
+    const { items, fetchItems, setItems } = useGridTableLoadData(loadItem)
     return (
         <>
 
